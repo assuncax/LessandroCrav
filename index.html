@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CT Lessandro Carvalho | Centro de Treinamento — Santa Bárbara d'Oeste</title>
+<meta name="description" content="Centro de Treinamento Lessandro Carvalho em Santa Bárbara d'Oeste/SP. Foco em qualidade de vida e saúde. CrossFit, LPO, Funcional e mais. Equipe certificada e espaço acessível. Agende sua aula experimental gratuita." />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CT Lessandro Carvalho | Centro de Treinamento" />
+<meta property="og:description" content="Qualidade de vida e saúde. CrossFit, LPO, Funcional e mais. Agende sua aula experimental gratuita." />
+<meta property="og:locale" content="pt_BR" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-2: #f4f7f6;
+    --bg-3: #eaf1ef;
+    --card: #ffffff;
+    --ink: #111315;        /* preto */
+    --ink-soft: #2b3033;
+    --muted: #5f6b6a;
+    --teal: #12b8a6;       /* verde água */
+    --teal-dark: #0e9b8c;
+    --teal-deep: #0a7a6e;
+    --line: #e3e9e7;
+    --radius: 16px;
+    --maxw: 1180px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: .98;
+    text-transform: uppercase;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .accent { color: var(--teal); }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 28px; border-radius: 999px;
+    font-weight: 700; font-size: 1rem; letter-spacing: .3px;
+    cursor: pointer; border: 2px solid transparent;
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: #fff;
+    box-shadow: 0 8px 26px rgba(18,184,166,.32);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(18,184,166,.45); }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal-dark); transform: translateY(-2px); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+
+  /* ---------- Header ---------- */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    transition: background .3s ease, border-color .3s ease, box-shadow .3s;
+    border-bottom: 1px solid transparent;
+  }
+  header.scrolled {
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--line);
+    box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .logo {
+    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+    display: grid; place-items: center;
+    font-family: 'Anton', sans-serif; color: #fff; font-size: 1.3rem;
+  }
+  .brand b { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.15rem; line-height: 1; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); }
+  .brand span { font-size: .72rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a { font-size: .92rem; font-weight: 600; color: var(--ink-soft); transition: color .2s; }
+  .nav-links a:hover { color: var(--teal-dark); }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .burger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+  .burger span { width: 26px; height: 2px; background: var(--ink); transition: .3s; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    padding: 140px 0 80px;
+    background:
+      radial-gradient(900px 600px at 82% -10%, rgba(18,184,166,.14), transparent 60%),
+      radial-gradient(700px 500px at -5% 110%, rgba(18,184,166,.10), transparent 55%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px; opacity: .55;
+    mask-image: radial-gradient(circle at 72% 38%, black, transparent 72%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 840px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--line);
+    padding: 8px 16px; border-radius: 999px; font-size: .8rem; font-weight: 600;
+    color: var(--muted); margin-bottom: 26px; letter-spacing: .5px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 4px rgba(22,163,74,.18); }
+  .hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); margin-bottom: 22px; color: var(--ink); }
+  .hero h1 .stroke { color: transparent; -webkit-text-stroke: 2px var(--teal); }
+  .hero p.lead { font-size: clamp(1.05rem, 2.5vw, 1.3rem); color: var(--muted); max-width: 620px; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-stats { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+  .stat .num { font-family: 'Anton', sans-serif; font-size: 2.4rem; color: var(--teal-dark); line-height: 1; }
+  .stat .lbl { font-size: .82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+  /* ---------- Section base ---------- */
+  section.block { padding: 100px 0; position: relative; }
+  .section-head { max-width: 660px; margin-bottom: 56px; }
+  .eyebrow { color: var(--teal-dark); font-weight: 700; font-size: .85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; display: block; }
+  .section-head h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 18px; color: var(--ink); }
+  .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+  /* ---------- Modalidades ---------- */
+  .grid { display: grid; gap: 20px; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 32px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  }
+  .mod-card { position: relative; overflow: hidden; }
+  .mod-card:hover { transform: translateY(-6px); border-color: var(--teal); box-shadow: 0 16px 36px rgba(18,184,166,.14); }
+  .mod-card .icon {
+    width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+    background: var(--bg-3); margin-bottom: 22px; color: var(--teal-dark);
+    border: 1px solid var(--line);
+  }
+  .mod-card .icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .mod-card h3 { font-size: 1.35rem; margin-bottom: 10px; color: var(--ink); }
+  .mod-card p { color: var(--muted); font-size: .95rem; }
+  .mod-card .tag { position: absolute; top: 22px; right: 22px; font-size: .68rem; font-weight: 700; color: var(--teal-dark); letter-spacing: 1px; }
+
+  /* ---------- Sobre / diferenciais ---------- */
+  .about { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+  .about-visual {
+    border-radius: 24px; min-height: 460px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(400px 300px at 30% 20%, rgba(18,184,166,.5), transparent 60%),
+      radial-gradient(420px 420px at 82% 88%, rgba(10,122,110,.45), transparent 60%),
+      linear-gradient(135deg, var(--teal-dark), var(--teal-deep));
+    display: grid; place-items: center;
+  }
+  .about-visual .big-letter { font-family: 'Anton', sans-serif; font-size: 16rem; color: rgba(255,255,255,.12); line-height: 1; }
+  .about-visual .float-badge {
+    position: absolute; background: #fff; border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 20px; box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  }
+  .fb-1 { top: 36px; left: 36px; }
+  .fb-2 { bottom: 36px; right: 36px; }
+  .float-badge .t { font-family: 'Anton', sans-serif; font-size: 1.6rem; color: var(--teal-dark); }
+  .float-badge .s { font-size: .78rem; color: var(--muted); }
+  .feature-list { list-style: none; margin-top: 30px; display: grid; gap: 18px; }
+  .feature-list li { display: flex; gap: 14px; align-items: flex-start; }
+  .feature-list .ck {
+    width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0; margin-top: 2px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff;
+    display: grid; place-items: center; font-weight: 800; font-size: .85rem;
+  }
+  .feature-list b { display: block; margin-bottom: 2px; color: var(--ink); }
+  .feature-list span { color: var(--muted); font-size: .92rem; }
+
+  /* ---------- Parcerias ---------- */
+  .partners { text-align: center; }
+  .partner-logos { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  .partner-chip {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 38px; min-width: 200px; transition: border-color .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  }
+  .partner-chip:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 14px 30px rgba(18,184,166,.14); }
+  .partner-chip .pname { font-family: 'Anton', sans-serif; font-size: 1.7rem; letter-spacing: 1px; color: var(--ink); }
+  .partner-chip .pdesc { font-size: .82rem; color: var(--muted); margin-top: 4px; }
+
+  /* ---------- Horários ---------- */
+  .hours-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .hours-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: 0 2px 10px rgba(0,0,0,.03); }
+  .hours-card h3 { font-size: 1.4rem; margin-bottom: 22px; color: var(--teal-dark); }
+  .hours-row { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: .98rem; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { font-weight: 600; }
+  .hours-row .time { color: var(--muted); }
+  .hours-row.closed .time { color: #d14343; font-weight: 600; }
+
+  /* ---------- Localização ---------- */
+  .location { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .map-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 400px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+  .map-frame iframe { width: 100%; height: 100%; min-height: 400px; border: 0; }
+  .loc-item { display: flex; gap: 16px; margin-bottom: 24px; }
+  .loc-item .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--bg-3); border: 1px solid var(--line); display: grid; place-items: center; flex-shrink: 0; color: var(--teal-dark); }
+  .loc-item .ic svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .socials a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .float-badge .t svg { width: 22px; height: 22px; vertical-align: -3px; }
+  .loc-item .lbl { font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
+  .loc-item .val { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+  .loc-item .val a:hover { color: var(--teal-dark); }
+
+  /* ---------- CTA final ---------- */
+  .final-cta {
+    position: relative; border-radius: 28px; padding: 72px 48px; text-align: center; overflow: hidden;
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal-deep));
+    color: #fff;
+  }
+  .final-cta::after {
+    content: ""; position: absolute; inset: 0; opacity: .12;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+  }
+  .final-cta h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 18px; color: #fff; position: relative; z-index: 1; }
+  .final-cta p { font-size: 1.15rem; max-width: 560px; margin: 0 auto 34px; font-weight: 500; color: rgba(255,255,255,.9); position: relative; z-index: 1; }
+  .final-cta .btn { position: relative; z-index: 1; }
+  .final-cta .btn-light { background: #fff; color: var(--teal-deep); }
+  .final-cta .btn-light:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.2); }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--ink); color: #e8edec; border-top: 1px solid var(--line); padding: 60px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .foot-grid p { color: #9aa6a4; font-size: .95rem; margin-top: 16px; max-width: 320px; }
+  .foot-col h4 { font-size: .85rem; text-transform: uppercase; letter-spacing: 2px; color: #8a9694; margin-bottom: 18px; }
+  .foot-col a { display: block; color: #e8edec; margin-bottom: 12px; font-size: .95rem; transition: color .2s; }
+  .foot-col a:hover { color: var(--teal); }
+  .footer-brand b { color: #fff; }
+  .footer-brand .logo { background: linear-gradient(135deg, var(--teal), var(--teal-deep)); }
+  .socials { display: flex; gap: 12px; margin-top: 20px; }
+  .socials a { width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); display: grid; place-items: center; transition: .2s; }
+  .socials a:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-3px); }
+  .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #8a9694; font-size: .85rem; }
+
+  /* ---------- WhatsApp float ---------- */
+  .wpp-float {
+    position: fixed; bottom: 24px; right: 24px; z-index: 90;
+    width: 60px; height: 60px; border-radius: 50%; background: #25d366;
+    display: grid; place-items: center; box-shadow: 0 10px 30px rgba(37,211,102,.4);
+    transition: transform .2s; color: #fff;
+  }
+  .wpp-float:hover { transform: scale(1.08); }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 900px) {
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .about, .location { grid-template-columns: 1fr; gap: 40px; }
+    .about-visual { min-height: 320px; }
+    .hours-wrap { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .nav-cta .btn-ghost { display: none; }
+    .burger { display: flex; }
+    .nav-links.open {
+      display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0;
+      background: #fff; border-bottom: 1px solid var(--line); padding: 24px; gap: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+    .grid-3 { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+    section.block { padding: 70px 0; }
+    .hero-stats { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header id="header">
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <div class="logo">CT</div>
+      <div>
+        <b>LESSANDRO CARVALHO</b><br />
+        <span>Centro de Treinamento</span>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#modalidades">Modalidades</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="#horarios">Horários</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://wa.me/5519971690630?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener" class="btn btn-primary">Aula Grátis</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="badge"><span class="dot"></span> Aberto • Santa Bárbara d'Oeste — SP</div>
+    <h1>Sua saúde.<br />Sua <span class="accent">qualidade de vida.</span> <span class="stroke">Seu lugar.</span></h1>
+    <p class="lead">Um centro de treinamento focado em qualidade de vida e saúde, altamente avaliado. CrossFit, Levantamento Olímpico, Funcional e muito mais — com equipe certificada e estrutura completa e acessível.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5519971690630?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20gratuita." target="_blank" rel="noopener" class="btn btn-primary">Agende sua aula experimental grátis</a>
+      <a href="#modalidades" class="btn btn-ghost">Ver modalidades</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">5,0★</div><div class="lbl">Altamente avaliado</div></div>
+      <div class="stat"><div class="num">L1 → LPO</div><div class="lbl">Equipe certificada</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Espaço acessível</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Modalidades ===== -->
+<section class="block" id="modalidades">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">O que oferecemos</span>
+      <h2>Modalidades para todos os níveis</h2>
+      <p>Do iniciante ao atleta avançado — treinos estruturados, progressivos e acompanhados de perto por profissionais.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card mod-card reveal"><span class="tag">CARRO-CHEFE</span><div class="icon"><svg viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg></div><h3>CrossFit / Cross Training</h3><p>Treinos funcionais de alta intensidade que combinam força, cardio e mobilidade. Cada dia um desafio diferente.</p></div>
+      <div class="card mod-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div><h3>Levantamento Olímpico (LPO)</h3><p>Técnica de arranco e arremesso com acompanhamento especializado para ganho de força e explosão.</p></div>
+      <div class="card mod-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div><h3>Ginástica Olímpica</h3><p>Desenvolva controle corporal, força relativa e habilidades como muscle-ups, handstand e barras.</p></div>
+      <div class="card mod-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div><h3>HIIT</h3><p>Treino intervalado de alta intensidade para queima calórica máxima e condicionamento em pouco tempo.</p></div>
+      <div class="card mod-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg></div><h3>Power Lifting</h3><p>Foco nos três grandes levantamentos — agachamento, supino e terra — para força máxima.</p></div>
+      <div class="card mod-card reveal"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div><h3>Treinamento Funcional</h3><p>Movimentos naturais que melhoram força, equilíbrio e condicionamento para o dia a dia e o esporte.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sobre ===== -->
+<section class="block" id="sobre" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="about">
+      <div class="reveal">
+        <span class="eyebrow">Por que treinar aqui</span>
+        <h2 style="font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 18px;">Mais que uma academia.<br /><span class="accent">Qualidade de vida.</span></h2>
+        <p style="color: var(--muted); font-size: 1.05rem;">No CT Lessandro Carvalho você encontra infraestrutura moderna, metodologia comprovada e um ambiente altamente incentivador. Um espaço pensado para receber todo mundo, com segurança e acessibilidade.</p>
+        <ul class="feature-list">
+          <li><span class="ck">✓</span><div><b>Equipe capacitada e certificada</b><span>Licenciamentos que vão do CrossFit Level One ao LPO (Levantamento de Peso Olímpico).</span></div></li>
+          <li><span class="ck">✓</span><div><b>Infraestrutura moderna</b><span>Equipamentos novos e ambiente altamente incentivador para o seu treino diário.</span></div></li>
+          <li><span class="ck">✓</span><div><b>Espaço 100% acessível</b><span>Estacionamento, banheiros e assentos totalmente adaptados para cadeirantes.</span></div></li>
+          <li><span class="ck">✓</span><div><b>Comodidades</b><span>Banheiros no local e estacionamento gratuito — no pátio e na rua.</span></div></li>
+        </ul>
+      </div>
+      <div class="about-visual reveal">
+        <div class="big-letter">CT</div>
+        <div class="float-badge fb-1"><div class="t">5,0 <svg viewBox="0 0 24 24" fill="#f5b301" stroke="#f5b301" stroke-width="1.5" stroke-linejoin="round"><path d="M11.5 2.5 14 8l6 .8-4.4 4.2 1.2 6L11.5 16 6.2 19l1.2-6L3 8.8 9 8z"/></svg></div><div class="s">Altamente avaliado</div></div>
+        <div class="float-badge fb-2"><div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal-dark)"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg> Acessível</div><div class="s">para cadeirantes</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Parcerias ===== -->
+<section class="block partners" id="parcerias">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 0; text-align: center;">
+      <span class="eyebrow">Use o seu benefício</span>
+      <h2>Aceitamos os principais parceiros</h2>
+      <p style="margin: 0 auto;">Treine usando seu plano corporativo de academia. Somos parceiros oficiais das maiores plataformas do Brasil.</p>
+    </div>
+    <div class="partner-logos reveal">
+      <a href="https://wellhub.com/pt-br/search/partners/ct-lessandro-carvalho-dona-regina/" target="_blank" rel="noopener" class="partner-chip">
+        <div class="pname">Wellhub</div>
+        <div class="pdesc">Antigo Gympass</div>
+      </a>
+      <a href="https://totalpass.com/br/academias/centro-de-treinamento-lessandro-carvalho/" target="_blank" rel="noopener" class="partner-chip">
+        <div class="pname">TotalPass</div>
+        <div class="pdesc">Acesso liberado pelo app</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Horários ===== -->
+<section class="block" id="horarios" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Funcionamento</span>
+      <h2>Horários de treino</h2>
+      <p>Aberto todos os dias úteis com janela ampla para encaixar o treino na sua rotina.</p>
+    </div>
+    <div class="hours-wrap">
+      <div class="hours-card reveal">
+        <h3>Segunda a Sexta</h3>
+        <div class="hours-row"><span class="day">Aberto</span><span class="time">06h00 — 20h00</span></div>
+        <div class="hours-row"><span class="day" style="color: var(--muted); font-weight: 400; font-size: .9rem;">Diversas turmas ao longo do dia</span><span class="time"></span></div>
+      </div>
+      <div class="hours-card reveal">
+        <h3>Fim de Semana</h3>
+        <div class="hours-row"><span class="day">Sábado</span><span class="time">08h00 — 10h00</span></div>
+        <div class="hours-row closed"><span class="day">Domingo</span><span class="time">Fechado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Localização / Contato ===== -->
+<section class="block" id="localizacao">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Onde estamos</span>
+      <h2>Venha nos visitar</h2>
+    </div>
+    <div class="location">
+      <div class="reveal">
+        <div class="loc-item">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Endereço</div><div class="val">Av. Alfredo Contato, 1175 — Dona Regina<br />Santa Bárbara d'Oeste — SP, 13455-726</div></div>
+        </div>
+        <div class="loc-item">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="lbl">WhatsApp / Telefone</div><div class="val"><a href="https://wa.me/5519971690630" target="_blank" rel="noopener">(19) 97169-0630</a></div></div>
+        </div>
+        <div class="loc-item">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+          <div><div class="lbl">E-mail</div><div class="val"><a href="mailto:ctlessandrocarvalho@gmail.com">ctlessandrocarvalho@gmail.com</a></div></div>
+        </div>
+        <div class="loc-item">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+          <div><div class="lbl">Redes Sociais</div><div class="val"><a href="https://www.instagram.com/ctlessandrocarvalho/" target="_blank" rel="noopener">@ctlessandrocarvalho</a></div></div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Alfredo+Contato+1175+Santa+Barbara+d'Oeste+SP" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 6px;">Traçar rota no Maps</a>
+      </div>
+      <div class="map-frame reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Av.%20Alfredo%20Contato%2C%201175%2C%20Santa%20B%C3%A1rbara%20d'Oeste%20-%20SP&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa CT Lessandro Carvalho"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA final ===== -->
+<section class="block" id="cta">
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>Sua primeira aula é por nossa conta</h2>
+      <p>Chega de adiar. Agende sua aula experimental gratuita e sinta na pele a energia do CT Lessandro Carvalho.</p>
+      <a href="https://wa.me/5519971690630?text=Ol%C3%A1!%20Quero%20agendar%20minha%20aula%20experimental%20gratuita." target="_blank" rel="noopener" class="btn btn-light">Quero minha aula grátis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand footer-brand">
+          <div class="logo">CT</div>
+          <div><b style="font-family:'Oswald',sans-serif; font-weight:600; font-size:1.15rem; letter-spacing:1px;">LESSANDRO CARVALHO</b><br /><span style="font-size:.72rem; color:#8a9694; letter-spacing:2px; text-transform:uppercase;">Centro de Treinamento</span></div>
+        </div>
+        <p>Qualidade de vida, saúde e resultados de verdade em Santa Bárbara d'Oeste — SP. Espaço moderno, acessível e acolhedor.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/ctlessandrocarvalho/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="https://wa.me/5519971690630" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></a>
+          <a href="mailto:ctlessandrocarvalho@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#parcerias">Parcerias</a>
+        <a href="#horarios">Horários</a>
+        <a href="#localizacao">Localização</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5519971690630" target="_blank" rel="noopener">(19) 97169-0630</a>
+        <a href="mailto:ctlessandrocarvalho@gmail.com">ctlessandrocarvalho@gmail.com</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Alfredo+Contato+1175+Santa+Barbara+d'Oeste+SP" target="_blank" rel="noopener">Av. Alfredo Contato, 1175 — Dona Regina</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CT Lessandro Carvalho. Todos os direitos reservados.</span>
+      <span>Foco em qualidade de vida e saúde.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/5519971690630?text=Ol%C3%A1!%20Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20treinos." target="_blank" rel="noopener" class="wpp-float" aria-label="Fale no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script>
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3 * 0.08) + 's';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
